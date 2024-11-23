@@ -1,0 +1,9 @@
+{
+  "APP_VERSION_NO": "2.13.8",
+  "SMART_PHONE_ID": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "IC_CARD_ID": "0000-000000",
+  "STATION_CAR": [
+    { "stationCd": "XX00", "carId": 1234567 },
+    { "stationCd": "YY00", "carId": 1234568 }
+  ]
+}

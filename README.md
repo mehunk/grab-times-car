@@ -4,6 +4,10 @@
 
 This is a simple bot that can help users to reserve a sharing car in advance.
 
+### Warning
+
+Although the cancellation of the reservation is supported and free, if you cancel too many times there is a risk that your account may be suspended.
+
 ## Prerequisites
 
 - Times Car Membership
@@ -33,6 +37,8 @@ Rename `config.sample.json` in `src` directory to `config.json`, then fill your 
 
 Also, you need to fill compositions of `STATION_CD` and `CAR_ID` which you want to reserve.
 
+About how to get `STATION_CD` and `CAR_ID`, please refer to the [Q & A](#q--a) section.
+
 ### Run the script locally
 
 ```shell
@@ -59,6 +65,14 @@ If the reservation is successful, you will receive an email from Times Car. Howe
 
 ### How to get your `SMART_PHONE_ID`?
 
-### How to get `STATION_CD`?
+You need to get it by capturing the HTTP request and response when you login the Times Car App. You can use tools like [Proxyman](https://proxyman.io/) or [Charles Proxy](https://www.charlesproxy.com/) to capture the request.
 
-### How to get `CAR_ID`?
+### How to get `STATION_CD` and `CAR_ID`?
+
+Login the Times Car Website, [search](https://share.timescar.jp/view/station/search.jsp) and find the station you want to reserve. Then, you can get the `STATION_CD` from the URL.
+
+The url of the reservation page is like `https://share.timescar.jp/view/reserve/input.jsp?scd=U118`. The `U118` is the `STATION_CD`.
+
+On the reservation page, use the developer tools to inspect the list of cars. You will find the `CAR_ID` list in the `id` attribute of the `div` tag.
+
+![How to get car id](./doc/car-id.png)
